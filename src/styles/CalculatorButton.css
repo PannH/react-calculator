@@ -1,0 +1,33 @@
+button {
+   font-size: 2em;
+   font-weight: bold;
+
+   border: none;
+   border-radius: 10px;
+
+   padding: 12px;
+   margin: 10px;
+
+   transition: all ease 0.2s;
+}
+
+button:hover {
+   cursor: pointer;
+   opacity: 0.75;
+   transform: scale(1.05);
+}
+
+button.numeral {
+   background-color: #3c4043;
+   color: white;
+}
+
+button.symbol {
+   background-color: #5f6368;
+   color: white;
+}
+
+button.function {
+   background-color: #8ab4f8;
+   color: black;
+}

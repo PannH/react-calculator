@@ -1,0 +1,30 @@
+.calculator {
+   width: 700px;
+   height: 600px;
+
+   display: grid;
+   grid-template-rows: 20% 80%;
+}
+
+.entry-container {
+   border: 2px solid #3c4043;
+   border-radius: 10px;
+
+   margin: 10px;
+   padding: 20px;
+}
+
+.entry-container .entry {
+   display: flex;
+   justify-content: right;
+   align-items: center;
+
+   height: 100%;
+
+   font-size: 1.75em;
+}
+
+.buttons-container {
+   display: grid;
+   grid-template-columns: repeat(4, 25%);
+}
