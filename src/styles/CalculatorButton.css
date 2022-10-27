@@ -1,4 +1,4 @@
-button {
+.buttons-container button {
    font-size: 2em;
    font-weight: bold;
 
@@ -11,23 +11,23 @@ button {
    transition: all ease 0.2s;
 }
 
-button:hover {
+.buttons-container button:hover {
    cursor: pointer;
    opacity: 0.75;
    transform: scale(1.05);
 }
 
-button.numeral {
+.buttons-container button.numeral {
    background-color: #3c4043;
    color: white;
 }
 
-button.symbol {
+.buttons-container button.symbol {
    background-color: #5f6368;
    color: white;
 }
 
-button.function {
+.buttons-container button.function {
    background-color: #8ab4f8;
    color: black;
 }

@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import CalculatorButton from './CalculatorButton'
+import CalculatorHistory from './CalculatorHistory'
 import '../styles/Calculator.css'
 
 function Calculator() {
 
    const [ entry, setEntry ] = useState('');
    const [ lastOperation, setLastOperation ] = useState('');
+   const [ operationHistory, setOperationHistory ] = useState([]);
 
    const updateEntry = (action: string) => {
 
@@ -19,7 +21,6 @@ function Calculator() {
             break;
 
          case 'DELETE':
-            console.log(entry);
             setEntry((entry) => entry.substring(0, (entry.length - 1)));
             break;
 
@@ -31,11 +32,33 @@ function Calculator() {
                   return '';
 
                setLastOperation(entry);
+               setOperationHistory(() => {
+
+                  if (operationHistory.includes(entry)) {
+
+                     operationHistory.splice(
+                        operationHistory.indexOf(entry),
+                        1
+                     )
+
+                     return [...operationHistory, entry]
+
+                  } else {
+
+                     return [...operationHistory, entry]
+
+                  };
+
+               });
 
                try {
+                  
                   return String(eval(entry))
+
                } catch (_) {
+
                   return 'ERROR'
+
                }
 
             })
@@ -80,6 +103,7 @@ function Calculator() {
             <CalculatorButton onClick={ () => updateEntry('CALCULATE') } className='function' label='='/>
             <CalculatorButton onClick={ () => updateEntry('+') } className='symbol' label='+'/>
          </div>
+         <CalculatorHistory operations={ operationHistory } setEntry={ setEntry }/>
       </div>
    )
    

@@ -1,8 +1,8 @@
 import '../styles/CalculatorButton.css'
 
-function CalculatorButton(params: { label: string, className: string, onClick: any }) {
+function CalculatorButton(props: { label: string, className: string, onClick: any }) {
 
-   return <button className={ params.className } onClick={ params.onClick }>{ params.label }</button>
+   return <button className={ props.className } onClick={ props.onClick }>{ props.label }</button>
 
 }
 
